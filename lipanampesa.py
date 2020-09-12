@@ -24,7 +24,7 @@ passwd = gen_encoded_password(time_stp)
 
 import requests
 from requests.auth import HTTPBasicAuth
-def gen_ccess_token(): 
+def gen_access_token(): 
     consumer_key = keys.consumerKey
     consumer_secret = keys.consumerSecret
     api_URL = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials"
@@ -35,7 +35,7 @@ def gen_ccess_token():
     return myaccess_token
 
 def lipa_na_mpesa():
-    access_token = gen_ccess_token()
+    access_token = gen_access_token()
     api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
     headers = { "Authorization": "Bearer %s" % access_token }
     request = {
